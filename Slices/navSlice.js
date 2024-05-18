@@ -11,7 +11,87 @@ const initialState = {
         },
     selectedActivity:{},
     otherUser:{},
-    activities: [],
+    trainingPlan:{},
+    activities: [
+        {
+            id: 1,
+            added: true,
+            title: "Summer Beach Run Course",
+            description: "Enjoy this scenic hour long beach running course made specially for you!",
+            img: require('../assets/trails/summerbr.png'),
+            bg: require('../assets/trails/BGSummer.png'),
+            time: 1,
+            values: [
+                {
+                    "title": "Calories b.",
+                    "value": "2643"
+                },
+                {
+                    "title": "Time",
+                    "value": "5h"
+                },
+                {
+                    "title": "Repetitions",
+                    "value": "5"
+                },
+                {
+                    "title": "Level",
+                    "value": "4"
+                }
+            ]
+        },
+        {
+            id: 2,
+            added: true,
+            title: "Mission save the President",
+            description: "Enjoy this hour long dynamic mission full of running and sneaking!",
+            img: require('../assets/missions/IStopwatch.png'),
+            bg: require('../assets/missions/BGSaveThePresident.png'),
+            time: 1,
+            values: [
+                {
+                    "title": "Calories b.",
+                    "value": "1102"
+                },
+                {
+                    "title": "Time",
+                    "value": "2h"
+                },
+                {
+                    "title": "Repetitions",
+                    "value": "2"
+                },
+                {
+                    "title": "Level",
+                    "value": "3"
+                }]},
+        {
+            id: 3,
+            added: true,
+            title: "HIIT explosive workout",
+            description: "45 minute long hiit session to prepare you for the dynamics of any explosive sport!",
+            img: require('../assets/Sportsicon(1).png'),
+            bg: require('../assets/trainings/BG1.png'),
+            time: 1,
+            values: [
+                {
+                    "title": "Calories b.",
+                    "value": "423"
+                },
+                {
+                    "title": "Time",
+                    "value": "0.5h"
+                },
+                {
+                    "title": "Repetitions",
+                    "value": "0"
+                },
+                {
+                    "title": "Level",
+                    "value": "0"
+                }]
+        },
+    ],
     connections: [],
     past_connections: [],
     leaderboard: [],
@@ -50,6 +130,7 @@ export const {setUser,setActivities,setConnections,setPastConnections,setLeaderb
 
 //Selectors
 export const selectUser = (state) => state.nav.user;
+export const selectTrainingPlan = (state) => state.nav.trainingPlan;
 export const selectOtherUser = (state) => state.nav.otherUser;
 export const selectActivities = (state) => state.nav.activities;
 export const selectActivity = (state) => state.nav.selectedActivity;
