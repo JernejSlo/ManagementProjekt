@@ -8,6 +8,9 @@ const initialState = {
         location: "Ljubljana, Slovenija",
         img: require('../assets/UserIcons/KatjaIcon.png'),
         rank: 33,
+        startWeight: 70,
+        weight: 67,
+        goal: 10
         },
     selectedActivity:{},
     otherUser:{},

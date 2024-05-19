@@ -18,7 +18,6 @@ import AppLoading from "expo-app-loading";
 import Connections from "../Components/Large/Connections";
 
 
-
 const Dashboard = () => {
 
     const user_ = useSelector(selectUser);
@@ -40,43 +39,7 @@ const Dashboard = () => {
     });
     const [listId, setListId] = useState([{id: 0,name: "Activities"},{id: 1,name: "Goals"},{id: 2,name: "Connections"}])
     const [selected,setSelected] = useState(0)
-    const styles = StyleSheet.create({
-        container: {
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            margin: "3%",
-            marginTop: "6%",
-            marginBottom: "6%",
-            alignSelf: "center",
-            width: 300,
-            height: 36,
-            paddingLeft: 6,
-            paddingRight: 6
-        },leftText: {
-            fontSize: 28,
-            color: '#303E49',
-            fontWeight: "bold",
-            fontFamily: "Magra700Bold",
 
-        },
-        rightText: {
-            fontSize: 14,
-            color: '#303E49',
-            fontWeight: "bold",
-            fontFamily: "Magra700Bold",
-            marginBottom: 3,
-        },
-        // Additional styles for flexbox approach
-        textWrapper: {
-            height: "100%",
-            justifyContent: 'flex-end',
-        },
-        base_bg:{
-            padding: 10,
-            backgroundColor: "#FFF7E1",
-            height: "100%"
-        }
-    });
 
     function renderComponent() {
         if (selected === 0) {
@@ -117,10 +80,41 @@ const Dashboard = () => {
     }
 };
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        margin: "3%",
+        marginTop: "6%",
+        marginBottom: "6%",
+        alignSelf: "center",
+        width: 300,
+        height: 36,
+        paddingLeft: 6,
+        paddingRight: 6
+    },leftText: {
+        fontSize: 28,
+        color: '#303E49',
+        fontWeight: "bold",
+        fontFamily: "Magra700Bold",
+
+    },
+    rightText: {
+        fontSize: 14,
+        color: '#303E49',
+        fontWeight: "bold",
+        fontFamily: "Magra700Bold",
+        marginBottom: 3,
+    },
+    // Additional styles for flexbox approach
+    textWrapper: {
+        height: "100%",
+        justifyContent: 'flex-end',
+    },
+    base_bg:{
+        padding: 10,
+        backgroundColor: "#FFF7E1",
+        height: "100%"
     },
     dashboardHeader: {
         height: 150,
