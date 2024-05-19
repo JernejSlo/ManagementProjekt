@@ -12,7 +12,7 @@ export default function Legend({types, metadata}) {
                 types.map((item,index) => {
 
                     return(
-                        <View style={{
+                        <View key={index} style={{
                             flexDirection: "row",
                             alignItems: "center",
                             marginRight: 7
