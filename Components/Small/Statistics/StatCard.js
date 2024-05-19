@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useFonts} from "@expo-google-fonts/magra";
+import {styles as DStyles} from "../../../Pages/Dashboard";
 
 const StatCard = ({ title, value, style, icon }) => {
 

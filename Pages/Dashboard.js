@@ -161,6 +161,12 @@ export const styles = StyleSheet.create({
         flex: 1,
         fontSize: 16,
     },
+    shadow: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.4,
+        shadowRadius: 1.2,
+    }
 });
 
 export default Dashboard;

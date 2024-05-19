@@ -4,7 +4,7 @@ import {Path, Svg} from "react-native-svg";
 export default function WavyRectangle({style,contentStyle={}, children, topColor="lightgray", bottomColor="darkgray"}) {
 
     return (
-        <View style={{...style,overflow: "hidden", backgroundColor: topColor}}>
+        <View style={{...style, overflow: "hidden", backgroundColor: topColor}}>
             <Svg
                 width={style.width}
                 height={style.height}

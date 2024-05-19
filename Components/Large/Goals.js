@@ -27,9 +27,6 @@ export default function Goals({goals }){
             alignSelf: "center",
         }}>
 
-
-
-
             <Text style={{
                 fontFamily: "Quicksand700Bold",
                 fontSize: 20,
@@ -175,9 +172,7 @@ export default function Goals({goals }){
 
 
             <TouchableOpacity style={{
-                fontFamily: "Quicksand700Bold",
-                fontSize: 20,
-                color: '#6b6b6b',
+
                 marginBottom: 10,
                 alignSelf: "center",
             }} onPress={() => navigator.navigate("TrainingPlanPage")}>
