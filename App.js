@@ -7,6 +7,7 @@ import {store} from "./store";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Statistics from "./Pages/Statistics";
 import Browse from "./Pages/Browse";
+import TrainingPlanPage from "./Pages/TrainingPlanPage";
 
 export default function App() {
 
@@ -35,6 +36,13 @@ export default function App() {
                     component={Browse}
                     options={{
                         headerShown: false,
+                    }}
+                />
+                <Stack.Screen
+                    name="Training_plan"
+                    component={TrainingPlanPage}
+                    options={{
+                      headerShown: false,
                     }}
                 />
             </Stack.Navigator>

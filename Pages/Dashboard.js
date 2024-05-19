@@ -16,6 +16,8 @@ import {
 } from "../Slices/navSlice";
 import AppLoading from "expo-app-loading";
 import Connections from "../Components/Large/Connections";
+import Goals from '../Components/Large/Goals';
+import goals from '../Components/TempValues/goals';
 
 
 const Dashboard = () => {
@@ -45,7 +47,7 @@ const Dashboard = () => {
         if (selected === 0) {
             return <Activities activities={activities} />;
         } else if (selected === 1) {
-            return <View/>;
+            return <Goals goals={goals}/>;
         } else {
             return <Connections connections={past_connections} />;
         }
