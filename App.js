@@ -5,6 +5,8 @@ import {Provider} from "react-redux";
 import {SafeAreaProvider} from "react-native-safe-area-context/src/SafeAreaContext";
 import {store} from "./store";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import Statistics from "./Pages/Statistics";
+import Browse from "./Pages/Browse";
 
 export default function App() {
 
@@ -21,6 +23,20 @@ export default function App() {
                     headerShown: false,
                   }}
               />
+                <Stack.Screen
+                    name="Statistics"
+                    component={Statistics}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <Stack.Screen
+                    name="Browse"
+                    component={Browse}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
             </Stack.Navigator>
           </SafeAreaProvider>
         </NavigationContainer>
