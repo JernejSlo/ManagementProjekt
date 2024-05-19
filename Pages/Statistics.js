@@ -142,7 +142,7 @@ export default function Statistics({}){
                 }}
                 topColor={"#CFEBFF"}
                 bottomColor={"#89AFCA"}
-                style={{width: vw*0.8, height: vh*0.2, marginTop: 0.05*vh,
+                style={{width: vw*0.8, height: vh*0.26, marginTop: 0.01*vh,
                 alignItems: "center", borderRadius: "13%"}}>
                 {renderComponent()}
                 <View style={{
