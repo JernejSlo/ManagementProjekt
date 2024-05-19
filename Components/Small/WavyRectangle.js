@@ -6,6 +6,9 @@ export default function WavyRectangle({style,contentStyle={}, children, topColor
     return (
         <View style={{...style,overflow: "hidden", backgroundColor: topColor}}>
             <Svg
+                width={style.width}
+                height={style.height}
+                viewBox={`0 0 ${style.width*2.55} ${style.height*0.5}`}
                 style={styles.svg}
             >
                 <Path d="M221.136 99.9507L55.1635 15.9267C29.8867 3.13023 0 21.4983 0 49.8297V255C0 275.987 17.0132 293 38 293H812C832.987 293 850 275.987 850 255V38.2162C850 13.0186 825.923 -5.20123 801.674 1.64616L717.695 25.3597C712.833 26.7326 707.746 27.1222 702.732 26.5058L540.763 6.59595C535.05 5.89366 529.252 6.49847 523.807 8.36474L250.619 101.995C240.918 105.32 230.285 104.583 221.136 99.9507Z"
