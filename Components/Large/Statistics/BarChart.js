@@ -20,7 +20,7 @@ export default function BarChart({x=[]}) {
 
                             ali: "flex-end",
                         }} key={index}>
-                            <Column width={(0.6*vw)/x.length} padding={(0.14*vw)/x.length} heightFactor={0.005*vh} values={column}/>
+                            <Column width={(0.6*vw)/x.length} padding={(0.14*vw)/x.length} heightFactor={0.007*vh} values={column}/>
                         </View>
                     )
                 })
