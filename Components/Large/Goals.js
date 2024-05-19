@@ -180,8 +180,8 @@ export default function Goals({goals }){
                 color: '#6b6b6b',
                 marginBottom: 10,
                 alignSelf: "center",
-            }}>
-                OPEN GOAL PAGE
+            }} onPress={() => navigator.navigate("TrainingPlanPage")}>
+                <Text>OPEN GOAL PAGE</Text>
             </TouchableOpacity>
 
 

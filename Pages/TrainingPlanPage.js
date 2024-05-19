@@ -7,11 +7,14 @@ import WavyRectangle from "../Components/Small/WavyRectangle";
 import React, {useState} from "react";
 import BarChart from "../Components/Large/Statistics/BarChart";
 import StatCard from "../Components/Small/Statistics/StatCard";
+import {useSelector} from "react-redux";
+import {selectUser} from "../Slices/navSlice";
 
 export default function TrainingPlanPage({}){
+    let user = useSelector(selectUser);
     return (
         <SafeAreaView style={{...styles.base_bg, alignItems: "center"}}>
-            <Text style={{...styles.title, marginTop: 20}}>Training Plan</Text>
+            <NavigateAndTitle title={`${user.name}'s Training Plan`} />
         </SafeAreaView>
     );
 }

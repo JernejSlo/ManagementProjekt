@@ -39,7 +39,7 @@ export default function App() {
                     }}
                 />
                 <Stack.Screen
-                    name="Training_plan"
+                    name="TrainingPlanPage"
                     component={TrainingPlanPage}
                     options={{
                       headerShown: false,
