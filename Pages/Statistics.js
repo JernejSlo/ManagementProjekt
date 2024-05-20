@@ -23,11 +23,11 @@ export default function Statistics({}){
 
     function renderComponent() {
         if (selected === 0) {
-            return <BarChart x={fakeData}/>;
+            return <BarChart height={0.25*vh} x={fakeDataY}/>;
         } else if (selected === 1) {
-            return <BarChart x={fakeData}/>;
+            return <BarChart height={0.25*vh} x={fakeDataM}/>;
         } else {
-            return <BarChart x={fakeData}/>;
+            return <BarChart height={0.25*vh} x={fakeDataT}/>;
         }
     }
 
@@ -45,7 +45,7 @@ export default function Statistics({}){
         {text: "Missed Training Plan" , color: "#ed6f70"},
         {text: "Completed Training Plan" , color: "#5de083"},
     ]
-    let fakeData = [
+    let fakeDataY = [
         {   title: "Jan",
             data: [
                 {color: "#edd870", value: 2, bottom: 11},
@@ -131,6 +131,143 @@ export default function Statistics({}){
             ]
         },
     ]
+    let fakeDataM = [
+        {   title: "Week 1",
+            data: [
+                {color: "#edd870", value: 2, bottom: 11},
+                {color: "#ed6f70", value: 3, bottom: 8},
+                {color: "#5de083", value: 8, bottom: 0},
+            ]
+        },
+        {   title: "Week 2",
+            data: [
+                {color: "#edd870", value: 3, bottom: 16},
+                {color: "#ed6f70", value: 6, bottom: 10},
+                {color: "#5de083", value: 10, bottom: 0},
+            ]
+        },
+        {   title: "Week 3",
+            data: [
+                {color: "#edd870", value: 3, bottom: 7},
+                {color: "#ed6f70", value: 2, bottom: 5},
+                {color: "#5de083", value: 5, bottom: 0},
+            ]
+        },
+        {   title: "Week 4",
+            data: [
+                {color: "#edd870", value: 2, bottom: 13},
+                {color: "#ed6f70", value: 4, bottom: 9},
+                {color: "#5de083", value: 9, bottom: 0},
+            ]
+        },
+        {   title: "Week 5",
+            data: [
+                {color: "#edd870", value: 4, bottom: 18},
+                {color: "#ed6f70", value: 10, bottom: 6},
+                {color: "#5de083", value: 8, bottom: 0},
+            ]
+        },
+    ]
+    let fakeDataT = [
+        {   title: "0",
+            data: [
+
+            ]
+        },
+        {   title: "1",
+            data: [
+
+            ]
+        },
+        {   title: "2",
+            data: [
+
+            ]
+        },
+        {   title: "3",
+            data: [
+
+            ]
+        },
+        {   title: "4",
+            data: [
+
+            ]
+        },
+        {   title: "5",
+            data: [
+
+            ]
+        },
+        {   title: "6",
+            data: [
+
+            ]
+        },
+        {   title: "7",
+            data: [
+
+            ]
+        },
+        {   title: "8",
+            data: [
+
+            ]
+        },
+        {   title: "9",
+            data: [
+
+            ]
+        },
+        {   title: "10",
+            data: [
+                {color: "#5de083", value: 1, bottom: 0},
+            ]
+        },
+        {   title: "11",
+            data: [ ]
+        },
+
+        {   title: "12",
+            data: [ ]
+        },
+        {   title: "13",
+            data: [ ]
+        },
+        {   title: "14",
+            data: [ ]
+        },
+        {   title: "15",
+            data: [ ]
+        },
+        {   title: "16",
+            data: [ ]
+        },
+        {   title: "17",
+            data: [ ]
+        },
+        {   title: "18",
+            data: [ ]
+        },
+        {   title: "19",
+            data: [
+                {color: "#edd870", value: 2, bottom: 0}, ]
+        },
+        {   title: "20",
+            data: [ ]
+        },
+        {   title: "21",
+            data: [ ]
+        },
+        {   title: "22",
+            data: [ ]
+        },
+        {   title: "23",
+            data: [ ]
+        },
+    ]
+
+    let [displayedData, setDisplayedData] = useState(fakeDataY)
 
     return (
         <SafeAreaView style={{...styles.base_bg, alignItems: "center"}}>

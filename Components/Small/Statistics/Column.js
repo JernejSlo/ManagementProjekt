@@ -2,7 +2,6 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native'
 
 export default function Column({values=[], padding, width, heightFactor}) {
 
-    console.log(width,heightFactor)
     if (values === undefined){
         return(
             <View>
