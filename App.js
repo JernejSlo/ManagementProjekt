@@ -1,17 +1,21 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Dashboard from "./Pages/Dashboard";
 import { NavigationContainer} from "@react-navigation/native";
-import {Provider} from "react-redux";
+import {Provider, useSelector} from "react-redux";
 import {SafeAreaProvider} from "react-native-safe-area-context/src/SafeAreaContext";
 import {store} from "./store";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Statistics from "./Pages/Statistics";
 import Browse from "./Pages/Browse";
 import TrainingPlanPage from "./Pages/TrainingPlanPage";
+import {selectUser} from "./Slices/navSlice";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 
 export default function App() {
 
   const Stack = createNativeStackNavigator();
+
   return (
       <Provider store={store}>
         <NavigationContainer>
@@ -20,31 +24,34 @@ export default function App() {
               <Stack.Screen
                   name="Dashboard"
                   component={Dashboard}
-                  options={{
-                    headerShown: false,
-                  }}
+                  options={{ headerShown: false }}
               />
-                <Stack.Screen
-                    name="Statistics"
-                    component={Statistics}
-                    options={{
-                        headerShown: false,
-                    }}
-                />
-                <Stack.Screen
-                    name="Browse"
-                    component={Browse}
-                    options={{
-                        headerShown: false,
-                    }}
-                />
-                <Stack.Screen
-                    name="TrainingPlanPage"
-                    component={TrainingPlanPage}
-                    options={{
-                      headerShown: false,
-                    }}
-                />
+              <Stack.Screen
+                  name="Statistics"
+                  component={Statistics}
+                  options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                  name="Browse"
+                  component={Browse}
+                  options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                  name="TrainingPlanPage"
+                  component={TrainingPlanPage}
+                  options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                  name="Login"
+                  component={Login}
+                  options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                  name="Register"
+                  component={Register}
+                  options={{ headerShown: false }}
+              />
+
             </Stack.Navigator>
           </SafeAreaProvider>
         </NavigationContainer>

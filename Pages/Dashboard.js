@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import DashboardUser from "../Components/Large/DashboardUser"
 import SwitchView from "../Components/Small/SwitchView"
@@ -18,6 +18,7 @@ import AppLoading from "expo-app-loading";
 import Connections from "../Components/Large/Connections";
 import Goals from '../Components/Large/Goals';
 import goals from '../Components/TempValues/goals';
+import {useNavigation} from "@react-navigation/native";
 
 
 const Dashboard = () => {
@@ -27,6 +28,10 @@ const Dashboard = () => {
     const connections_ = useSelector(selectConnections);
     const past_connections = useSelector(selectPastConnections);
     const trainingPlan_ = useSelector(selectTrainingPlan);
+    const navigator = useNavigation()
+    if (user_?.loggedIn === false){
+        navigator.navigate("Login")
+    }
 
     const [user, setUser] = useState(user_)
     const [connections, setConnections] = useState(connections_)
