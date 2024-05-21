@@ -11,6 +11,8 @@ import TrainingPlanPage from "./Pages/TrainingPlanPage";
 import {selectUser} from "./Slices/navSlice";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import CoursePage from "./Pages/CoursePage";
+import CourseInProgress from "./Pages/CourseInProgress";
 
 export default function App() {
 
@@ -32,9 +34,25 @@ export default function App() {
                   options={{ headerShown: false }}
               />
               <Stack.Screen
+                  name="Course"
+                  component={CoursePage}
+                  options={{
+                    headerShown: false,
+                  }}
+              />
+              <Stack.Screen
                   name="Browse"
                   component={Browse}
-                  options={{ headerShown: false }}
+                  options={{
+                    headerShown: false,
+                  }}
+              />
+              <Stack.Screen
+                  name="CourseInProgress"
+                  component={CourseInProgress}
+                  options={{
+                    headerShown: false,
+                  }}
               />
               <Stack.Screen
                   name="TrainingPlanPage"
