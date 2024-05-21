@@ -65,8 +65,7 @@ export default function LoginPage() {
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => {
-                        handleLogin(loginData.email, loginData.password, dispatch);
-                        navigation.navigate('Dashboard');
+                        handleLogin(loginData.email, loginData.password, dispatch, navigation);
                     }}
                 >
                     <Text style={styles.buttonText}>Login</Text>

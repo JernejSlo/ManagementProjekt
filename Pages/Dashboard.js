@@ -24,6 +24,7 @@ import {useNavigation} from "@react-navigation/native";
 const Dashboard = () => {
 
     const user_ = useSelector(selectUser);
+    console.log(user_)
     const activities = useSelector(selectActivities);
     const connections_ = useSelector(selectConnections);
     const past_connections = useSelector(selectPastConnections);
@@ -33,7 +34,6 @@ const Dashboard = () => {
         navigator.navigate("Login")
     }
 
-    const [user, setUser] = useState(user_)
     const [connections, setConnections] = useState(connections_)
     const [trainingPlan, setTrainingPlan] = useState(trainingPlan_)
 
@@ -76,7 +76,7 @@ const Dashboard = () => {
                         </Text>
                     </View>
                 </View>
-                <DashboardUser user={user} activities={activities}/>
+                <DashboardUser user={user_} activities={activities}/>
                 <SwitchView items={listId} func={(index) => setSelected(index)}/>
                 {
                     renderComponent()

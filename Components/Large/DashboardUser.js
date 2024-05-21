@@ -1,9 +1,20 @@
 import React, {useCallback, useState} from 'react';
-import {View, Text,StyleSheet, FlatList, Button,ImageBackground,Image,TouchableOpacity} from 'react-native';
+import {
+    View,
+    Text,
+    StyleSheet,
+    FlatList,
+    Button,
+    ImageBackground,
+    Image,
+    TouchableOpacity,
+    ImageBackgroundComponent
+} from 'react-native';
 import MaterialIcon from "react-native-vector-icons/MaterialIcons"
 import IoniIcon from "react-native-vector-icons/Ionicons"
 import ValuesInLine from "../Small/ValuesInLine";
 import {useNavigation} from "@react-navigation/native";
+import {loadedImages} from "../TempValues/Images";
 
 export default function DashboardUser({id, user, activities}){
 
@@ -97,6 +108,8 @@ export default function DashboardUser({id, user, activities}){
         }
     }
 
+
+
     return (
         <ImageBackground
                 source={require('../../assets/bgWavy.png')}
@@ -109,7 +122,11 @@ export default function DashboardUser({id, user, activities}){
                 width: "80%",
                 marginLeft: "10%",
             }}>
-                <Image style={styles.icon} source={user.img}/>
+                <ImageBackground source={require('../../assets/bgWavyLight.png')} style={{
+                    borderRadius: 20,
+                }}>
+                    <Image style={styles.icon} source={loadedImages[user.img]}/>
+                </ImageBackground>
                 <View style={styles.textContainer}>
                     <Text style={styles.tT}>{user.name}</Text>
                     <Text style={styles.tB}>{user.location}</Text>

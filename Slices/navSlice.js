@@ -18,12 +18,12 @@ const initialState = {
     user: {
         name: "Katja Novak",
         location: "Ljubljana, Slovenija",
-        img: require('../assets/UserIcons/KatjaIcon.png'),
+        img: "UserIcons/KatjaIcon.png",
         rank: 33,
         startWeight: 70,
         weight: 67,
         goal: 10,
-        loggedIn: true
+        loggedIn: false
     },
     selectedActivity:{},
     otherUser:{},

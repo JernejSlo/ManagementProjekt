@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet,Keyboard, TextInput, TouchableWithoutFeedback } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { handleSignup } from '../api/auth';
@@ -7,12 +7,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function RegisterPage() {
     const [registerData, setRegisterData] = useState({
-        username: "",
+        name: "",
         email: "",
         password: "",
         gender: "", // Added gender field
         weight: "", // Added age field
-        goalWeight: ""
+        goal_weight: ""
     });
     const dispatch = useDispatch();
     const navigation = useNavigation();
@@ -30,103 +30,106 @@ export default function RegisterPage() {
 
     return (
         <SafeAreaView style={styles.base_bg}>
-            <Text style={{
-                alignSelf: "center",
-                paddingBottom: 10,
-                fontFamily: "Quicksand700Bold",
-                fontSize: 28,
-                width: "80%",
-                marginRight: "10%",
-                textAlign: "center",
-                color: '#303E49',
-            }}>
-                REGISTER
-            </Text>
-            <View style={[styles.container]}>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Username"
-                    value={registerData.username}
-                    onChangeText={(text) => handleInputChange('username', text)}
-                    autoCapitalize="none"
-                />
-                <TextInput
-                    style={styles.input}
-                    placeholder="Email"
-                    value={registerData.email}
-                    onChangeText={(text) => handleInputChange('email', text)}
-                    keyboardType="email-address"
-                    autoCapitalize="none"
-                />
-                <TextInput
-                    style={styles.input}
-                    placeholder="Password"
-                    value={registerData.password}
-                    onChangeText={(text) => handleInputChange('password', text)}
-                    secureTextEntry
-                />
-                {/* Gender Selection */}
-                <Text style={styles.label}>Select Gender:</Text>
-                <View style={styles.genderContainer}>
-                    <TouchableOpacity
-                        style={[styles.genderButton, registerData.gender === 'Male' && styles.selectedGender]}
-                        onPress={() => handleInputChange('gender', 'Male')}
-                    >
-                        <Text style={[styles.genderButtonText, registerData.gender === 'Male' && styles.selectedGenderButtonText]}>Male</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.genderButton, registerData.gender === 'Female' && styles.selectedGender]}
-                        onPress={() => handleInputChange('gender', 'Female')}
-                    >
-                        <Text style={[styles.genderButtonText, registerData.gender === 'Female' && styles.selectedGenderButtonText]}>
-                            Female</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.genderButton, registerData.gender === 'Other' && styles.selectedGender]}
-                        onPress={() => handleInputChange('gender', 'Other')}
-                    >
-                        <Text style={[styles.genderButtonText, registerData.gender === 'Other' && styles.selectedGenderButtonText]}>Other</Text>
-                    </TouchableOpacity>
-                </View>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss} acessible={false}>
+                <View style={{ flex: 1, justifyContent: 'center' }}>
+                    <Text style={{
+                        alignSelf: "center",
+                        paddingBottom: 10,
+                        fontFamily: "Quicksand700Bold",
+                        fontSize: 28,
+                        width: "80%",
+                        marginRight: "10%",
+                        textAlign: "center",
+                        color: '#303E49',
+                    }}>
+                        REGISTER
+                    </Text>
+                    <View style={[styles.container]}>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Full Name"
+                            value={registerData.name}
+                            onChangeText={(text) => handleInputChange('name', text)}
+                            autoCapitalize="none"
+                        />
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Email"
+                            value={registerData.email}
+                            onChangeText={(text) => handleInputChange('email', text)}
+                            keyboardType="email-address"
+                            autoCapitalize="none"
+                        />
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Password"
+                            value={registerData.password}
+                            onChangeText={(text) => handleInputChange('password', text)}
+                            secureTextEntry
+                        />
+                        {/* Gender Selection */}
+                        <Text style={styles.label}>Select Gender:</Text>
+                        <View style={styles.genderContainer}>
+                            <TouchableOpacity
+                                style={[styles.genderButton, registerData.gender === 'Male' && styles.selectedGender]}
+                                onPress={() => handleInputChange('gender', 'Male')}
+                            >
+                                <Text style={[styles.genderButtonText, registerData.gender === 'Male' && styles.selectedGenderButtonText]}>Male</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={[styles.genderButton, registerData.gender === 'Female' && styles.selectedGender]}
+                                onPress={() => handleInputChange('gender', 'Female')}
+                            >
+                                <Text style={[styles.genderButtonText, registerData.gender === 'Female' && styles.selectedGenderButtonText]}>
+                                    Female</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={[styles.genderButton, registerData.gender === 'Other' && styles.selectedGender]}
+                                onPress={() => handleInputChange('gender', 'Other')}
+                            >
+                                <Text style={[styles.genderButtonText, registerData.gender === 'Other' && styles.selectedGenderButtonText]}>Other</Text>
+                            </TouchableOpacity>
+                        </View>
 
-                {/* Age Input */}
-                <View style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between"
-                }}>
-                    <TextInput
-                        style={{...styles.input, width: "45%"}}
-                        placeholder="Weight"
-                        value={registerData.age}
-                        onChangeText={(text) => handleInputChange('weight', text)}
-                        keyboardType="numeric"
-                    />
-                    <TextInput
-                        style={{...styles.input, width: "45%"}}
-                        placeholder="Goal weight"
-                        value={registerData.age}
-                        onChangeText={(text) => handleInputChange('goalWeight', text)}
-                        keyboardType="numeric"
-                    />
+                        {/* Age Input */}
+                        <View style={{
+                            flexDirection: "row",
+                            justifyContent: "space-between"
+                        }}>
+                            <TextInput
+                                style={{...styles.input, width: "45%"}}
+                                placeholder="Weight"
+                                value={registerData.age}
+                                onChangeText={(text) => handleInputChange('weight', text)}
+                                keyboardType="numeric"
+                            />
+                            <TextInput
+                                style={{...styles.input, width: "45%"}}
+                                placeholder="Goal weight"
+                                value={registerData.age}
+                                onChangeText={(text) => handleInputChange('goal_weight', text)}
+                                keyboardType="numeric"
+                            />
 
+                        </View>
+                        {/* Handle sign up */}
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={() => {
+                                handleSignup(registerData, dispatch);
+                            }}
+                        >
+                            <Text style={styles.buttonText}>Register</Text>
+                        </TouchableOpacity>
+                        <View style={{ alignItems: "center" }}>
+                            <Text style={styles.text}>Already have an account?</Text>
+                            <TouchableOpacity onPress={navigateToLogin}>
+                                <Text style={styles.linkText}>Login</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
                 </View>
-                {/* Handle sign up */}
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => {
-                        handleSignup(registerData.email, registerData.password, registerData.username, dispatch);
-                        navigation.navigate('Dashboard');
-                    }}
-                >
-                    <Text style={styles.buttonText}>Register</Text>
-                </TouchableOpacity>
-                <View style={{ alignItems: "center" }}>
-                    <Text style={styles.text}>Already have an account?</Text>
-                    <TouchableOpacity onPress={navigateToLogin}>
-                        <Text style={styles.linkText}>Login</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
+            </TouchableWithoutFeedback>
         </SafeAreaView>
     );
 }
