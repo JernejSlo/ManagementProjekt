@@ -116,7 +116,7 @@ export default function RegisterPage() {
                         <TouchableOpacity
                             style={styles.button}
                             onPress={() => {
-                                handleSignup(registerData, dispatch);
+                                handleSignup(registerData, dispatch, navigation);
                             }}
                         >
                             <Text style={styles.buttonText}>Register</Text>

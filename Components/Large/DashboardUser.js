@@ -129,7 +129,7 @@ export default function DashboardUser({id, user, activities}){
                 </ImageBackground>
                 <View style={styles.textContainer}>
                     <Text style={styles.tT}>{user.name}</Text>
-                    <Text style={styles.tB}>{user.location}</Text>
+                    <Text style={styles.tB}>Koper, Slovenija</Text>
                 </View>
                 <ValuesInLine vals={vals} color={"rgba(123, 143, 152, 0.45)"} texts={styles}
                               paddinga={14}

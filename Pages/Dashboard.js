@@ -24,7 +24,6 @@ import {useNavigation} from "@react-navigation/native";
 const Dashboard = () => {
 
     const user_ = useSelector(selectUser);
-    console.log(user_)
     const activities = useSelector(selectActivities);
     const connections_ = useSelector(selectConnections);
     const past_connections = useSelector(selectPastConnections);
