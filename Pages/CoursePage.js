@@ -7,6 +7,27 @@ import {selectActivities, selectActivity, setActivities} from "../Slices/navSlic
 import {useNavigation} from "@react-navigation/native";
 import NavigateAndTitle from "../Components/Small/NavigateAndTitle";
 
+export const courseImages = {
+    // missions
+    "missions/BGAlien.png" : require("../assets/missions/BGAlien.png"),
+    "missions/BGAssasinateTheKing.png" : require("../assets/missions/BGAssasinateTheKing.png"),
+    "missions/BGSaveThePresident.png" : require("../assets/missions/BGSaveThePresident.png"),
+    // trails
+    "trails/ufhBG.png" : require("../assets/trails/ufhBG.png"),
+    "trails/BG2.png" : require("../assets/trails/BG2.png"),
+    "trails/BG3.png" : require("../assets/trails/BG3.png"),
+    "trails/BG4.png" : require("../assets/trails/BG4.png"),
+    "trails/BGSummer.png" : require("../assets/trails/BGSummer.png"),
+    "trails/BGWinter.png" : require("../assets/trails/BGWinter.png"),
+    "trails/Gift.png" : require("../assets/trails/Gift.png"),
+
+
+    // trainings
+    "trainings/BG1.png" : require("../assets/trainings/BG1.png"),
+    "trainings/BG2.png" : require("../assets/trainings/BG2.png"),
+
+}
+
 export default function CoursePage( ){
 
     const item = useSelector(selectActivity)
@@ -98,7 +119,7 @@ export default function CoursePage( ){
                     height: "40%",
                     borderTopLeftRadius: 20,
                     borderTopRightRadius: 20,
-                }} source={item.bg}/>
+                }} source={courseImages[item.bg]}/>
                 <Text style={{
                     margin: 20,
                     fontFamily: "Quicksand700Bold",

@@ -1,25 +1,94 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import {SafeAreaView} from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialIcons"
 import SwitchView from "../Components/Small/SwitchView";
 import Activities from "../Components/Large/Activities";
-import missions from "../Components/TempValues/missions";
-import trails from "../Components/TempValues/Trails";
 import SearchBar from "../Components/Small/SearchBar";
 import {useNavigation} from "@react-navigation/native";
-import training from "../Components/TempValues/Training";
 import NavigateAndTitle from "../Components/Small/NavigateAndTitle";
+import {supabase} from "../supbase";
+
+export const fetchAndCategorizeData = async () => {
+    try {
+        // Fetch activities
+        const { data: activities, error: activitiesError } = await supabase
+            .from('activities') // Replace with your activities table name
+            .select('*');
+
+        if (activitiesError) {
+            throw activitiesError;
+        }
+
+        // Fetch activity values
+        const { data: activityValues, error: activityValuesError } = await supabase
+            .from('activity_values') // Replace with your activity values table name
+            .select('*');
+
+        if (activityValuesError) {
+            throw activityValuesError;
+        }
+
+        // Initialize variables for each type
+        const missions = [];
+        const trails = [];
+        const trainings = [];
+
+        // Categorize data based on the `type` value and attach values
+        activities.forEach((item) => {
+            // Find matching values for the activity
+            const values = activityValues.filter(value => value.activity_id === item.id);
+            item.values = values;
+
+            switch (item.type) {
+                case 'mission':
+                    missions.push(item);
+                    break;
+                case 'trail':
+                    trails.push(item);
+                    break;
+                case 'training':
+                    trainings.push(item);
+                    break;
+                default:
+                    console.warn(`Unknown type: ${item.type}`);
+            }
+        });
+
+        console.log('Missions:', missions);
+        console.log('Trails:', trails);
+        console.log('Trainings:', trainings);
+
+        return { missions, trails, trainings };
+    } catch (error) {
+        console.error('Error fetching data from Supabase:', error);
+        return { missions: [], trails: [], trainings: [] };
+    }
+};
 
 
 export default function Browse(){
 
+    const [trails_,setTrails_] = useState([])
+    const [missions_,setMissions_] = useState([])
+    const [trainings_,setTrainings_] = useState([])
+
+    useEffect(() => {
+        const getData = async () => {
+            const { missions, trails, trainings } = await fetchAndCategorizeData();
+            setMissions_(sortByPopularity(missions));
+            setTrails_(sortByPopularity(trails).slice(0,4));
+            setTrainings_(sortByPopularity(trainings));
+            console.log("Here:")
+            console.log(missions_,trainings_,trails_)
+            console.log("\n")
+        };
+
+        getData();
+    }, []);
+
     const [listId, setListId] = useState([{id: 0,name: "Trails"},{id: 1,name: "Missions"},{id: 2,name: "Training"}])
     const [selected,setSelected] = useState(0)
-
-    const [trails_,setTrails_] = useState(sortByPopularity(trails).slice(0,4))
-    const [missions_,setMissions_] = useState(sortByPopularity(missions))
-    const [trainings_,setTrainings_] = useState(sortByPopularity(training))
 
     const [search_,setSearch_] = useState("")
 
@@ -52,16 +121,16 @@ export default function Browse(){
         if (text.toLowerCase() == "all" || text == "*"){
             setTrails_(sortByPopularity(searchItems("",trails)))
             setMissions_(sortByPopularity(searchItems("",missions)))
-            setTrainings_(sortByPopularity(searchItems("",training)))
+            setTrainings_(sortByPopularity(searchItems("",trainings)))
         }else if (text != "") {
             setTrails_(sortByPopularity(searchItems(text, trails)))
             setMissions_(sortByPopularity(searchItems(text, missions)))
-            setTrainings_(sortByPopularity(searchItems(text, training)))
+            setTrainings_(sortByPopularity(searchItems(text, trainings)))
         }
         else{
             setTrails_(sortByPopularity(searchItems(text,trails)).slice(0,4))
             setMissions_(sortByPopularity(searchItems(text,missions)).slice(0,2))
-            setTrainings_(sortByPopularity(searchItems(text,training)).slice(0,2))
+            setTrainings_(sortByPopularity(searchItems(text,trainings)).slice(0,2))
         }
 
 

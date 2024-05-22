@@ -8,7 +8,7 @@ const initialState = {
     /*user:{
         name: "",
         location: "",
-        img: require('../assets/UserIcons/KatjaIcon.png'),
+        img: 'UserIcons/KatjaIcon.png',
         rank: -1,
         startWeight: 0,
         weight: 0,
@@ -34,8 +34,8 @@ const initialState = {
             added: true,
             title: "Summer Beach Run Course",
             description: "Enjoy this scenic hour long beach running course made specially for you!",
-            img: require('../assets/trails/summerbr.png'),
-            bg: require('../assets/trails/BGSummer.png'),
+            img: 'trails/summerbr.png',
+            bg: 'trails/BGSummer.png',
             time: 1,
             values: [
                 {
@@ -61,8 +61,8 @@ const initialState = {
             added: true,
             title: "Mission save the President",
             description: "Enjoy this hour long dynamic mission full of running and sneaking!",
-            img: require('../assets/missions/IStopwatch.png'),
-            bg: require('../assets/missions/BGSaveThePresident.png'),
+            img: 'missions/IStopwatch.png',
+            bg: 'missions/BGSaveThePresident.png',
             time: 1,
             values: [
                 {
@@ -86,8 +86,8 @@ const initialState = {
             added: true,
             title: "HIIT explosive workout",
             description: "45 minute long hiit session to prepare you for the dynamics of any explosive sport!",
-            img: require('../assets/Sportsicon(1).png'),
-            bg: require('../assets/trainings/BG1.png'),
+            img: 'trainings/I1.png',
+            bg: 'trainings/BG1.png',
             time: 1,
             values: [
                 {
@@ -113,13 +113,13 @@ const initialState = {
             id: "00001",
             title: "BH FITNESS RS800",
             connection: "Press to connect",
-            img: require('../assets/treadmillog.png'),
+            img: 'treadmillog.png',
         },
         {
             id: "00002",
             title: "Samsung TV",
             connection: "Press to connect",
-            img: require('../assets/tvS.png'),
+            img: 'tvS.png',
         },
 
     ],
@@ -128,24 +128,24 @@ const initialState = {
             id: "00001",
             title: "BH FITNESS RS900",
             connection: "Connected",
-            img: require('../assets/treadmillog.png'),
+            img: 'treadmillog.png',
         },
         {
             id: "00002",
             title: "Apple TV",
             connection: "Connected",
-            img: require('../assets/tv.png'),
+            img: 'tv.png',
         },
         {
             id: "00003",
             title: "BH FITNESS RS800",
             connection: "Disconnected",
-            img: require('../assets/8.png'),
+            img: '8.png',
         },{
             id: "00004",
             title: "Apple Watch",
             connection: "Disconnected",
-            img: require('../assets/7.png'),
+            img: '7.png',
         },
     ],
     leaderboard: [
@@ -153,14 +153,14 @@ const initialState = {
             name: "Jaka Lee",
             location: "Ljubljana, Slovenija",
             rank: 1,
-            img: require('../assets/AsianGuy.png'),
+            img: 'AsianGuy.png',
             activities: [
                 {
                     id: 1,
                     title: "Summer Beach Run Course",
                     description: "Enjoy this scenic hour long beach running course made specially for you!",
-                    img: require('../assets/trails/summerbr.png'),
-                    bg: require('../assets/trails/BGSummer.png'),
+                    img: 'trails/summerbr.png',
+                    bg: 'trails/BGSummer.png',
                     time: 1,
                     values: [
                         {
@@ -185,8 +185,8 @@ const initialState = {
                     id: 2,
                     title: "Uphill Forest Hike Course",
                     description: "Classic end of the week hike, a variety of medium inclines on a path through a forest.",
-                    img: require('../assets/trails/uphillForestHike.png'),
-                    bg: require('../assets/trails/ufhBG.png'),
+                    img: 'trails/uphillForestHike.png',
+                    bg: 'trails/ufhBG.png',
                     time: 1,
                     values: [
                         {
@@ -210,8 +210,8 @@ const initialState = {
                     id: 3,
                     title: "HIIT explosive workout",
                     description: "45 minute long hiit session to prepare you for the dynamics of any explosive sport!",
-                    img: require('../assets/Sportsicon(1).png'),
-                    bg: require('../assets/trainings/BG1.png'),
+                    img: 'Sportsicon(1).png',
+                    bg: 'trainings/BG1.png',
                     time: 1,
                     values: [
                         {
@@ -237,14 +237,14 @@ const initialState = {
             name: "Aleš Lunder",
             location: "Koper, Slovenija",
             rank: 2,
-            img: require('../assets/AlesGuy.png'),
+            img: 'AlesGuy.png',
             activities: [
                 {
                     id: 1,
                     title: "Summer Beach Run Course",
                     description: "Enjoy this scenic hour long beach running course made specially for you!",
-                    img: require('../assets/trails/summerbr.png'),
-                    bg: require('../assets/trails/BGSummer.png'),
+                    img: 'trails/summerbr.png',
+                    bg: 'trails/BGSummer.png',
                     time: 1,
                     values: [
                         {
@@ -269,8 +269,8 @@ const initialState = {
                     id: 2,
                     title: "Uphill Forest Hike Course",
                     description: "Classic end of the week hike, a variety of medium inclines on a path through a forest.",
-                    img: require('../assets/trails/uphillForestHike.png'),
-                    bg: require('../assets/trails/ufhBG.png'),
+                    img: 'trails/uphillForestHike.png',
+                    bg: 'trails/ufhBG.png',
                     time: 1,
                     values: [
                         {
@@ -294,8 +294,8 @@ const initialState = {
                     id: 3,
                     title: "HIIT explosive workout",
                     description: "45 minute long hiit session to prepare you for the dynamics of any explosive sport!",
-                    img: require('../assets/Sportsicon(1).png'),
-                    bg: require('../assets/trainings/BG1.png'),
+                    img: 'Sportsicon(1).png',
+                    bg: 'trainings/BG1.png',
                     time: 1,
                     values: [
                         {
@@ -321,14 +321,14 @@ const initialState = {
             name: "Nika Franko",
             location: "Ljubljana, Slovenija",
             rank: 3,
-            img: require('../assets/RedHairGirl.png'),
+            img: 'RedHairGirl.png',
             activities: [
                 {
                     id: 1,
                     title: "Summer Beach Run Course",
                     description: "Enjoy this scenic hour long beach running course made specially for you!",
-                    img: require('../assets/trails/summerbr.png'),
-                    bg: require('../assets/trails/BGSummer.png'),
+                    img: 'trails/summerbr.png',
+                    bg: 'trails/BGSummer.png',
                     time: 1,
                     values: [
                         {
@@ -353,8 +353,8 @@ const initialState = {
                     id: 2,
                     title: "Uphill Forest Hike Course",
                     description: "Classic end of the week hike, a variety of medium inclines on a path through a forest.",
-                    img: require('../assets/trails/uphillForestHike.png'),
-                    bg: require('../assets/trails/ufhBG.png'),
+                    img: 'trails/uphillForestHike.png',
+                    bg: 'trails/ufhBG.png',
                     time: 1,
                     values: [
                         {
@@ -378,8 +378,8 @@ const initialState = {
                     id: 3,
                     title: "HIIT explosive workout",
                     description: "45 minute long hiit session to prepare you for the dynamics of any explosive sport!",
-                    img: require('../assets/Sportsicon(1).png'),
-                    bg: require('../assets/trainings/BG1.png'),
+                    img: 'trainings/I1.png',
+                    bg: 'trainings/BG1.png',
                     time: 1,
                     values: [
                         {
