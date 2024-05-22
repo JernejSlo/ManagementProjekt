@@ -3,9 +3,10 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image} from 'react-
 import {SafeAreaView} from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {useDispatch, useSelector} from "react-redux";
-import {selectActivities, selectActivity, setActivities} from "../Slices/navSlice";
+import {selectActivities, selectActivity, selectUser, setActivities} from "../Slices/navSlice";
 import {useNavigation} from "@react-navigation/native";
 import NavigateAndTitle from "../Components/Small/NavigateAndTitle";
+import {supabase} from "../supbase";
 
 export const courseImages = {
     // missions
@@ -28,6 +29,35 @@ export const courseImages = {
 
 }
 
+export const insertUserActivity = async (userId, activityId, caloriesBurned, totalTime, repetitions, level) => {
+    try {
+        // Prepare the new user activity data
+        const newUserActivity = {
+            uid: userId,
+            cid: activityId,
+            calories_burned: caloriesBurned,
+            total_time: totalTime,
+            repetitions: repetitions,
+            level: level,
+        };
+
+        // Insert data into user_activities table
+        const { data, error } = await supabase
+            .from('user_activities') // Replace with your user_activities table name
+            .insert([newUserActivity]);
+
+        if (error) {
+            throw error;
+        }
+
+        console.log('User activity inserted successfully:', data);
+        return true;
+    } catch (error) {
+        console.error('Error inserting user activity into Supabase:', error);
+        return false;
+    }
+};
+
 export default function CoursePage( ){
 
     const item = useSelector(selectActivity)
@@ -35,7 +65,7 @@ export default function CoursePage( ){
     const dispatch = useDispatch()
     const current = useSelector(selectActivities)
     const navigator = useNavigation()
-
+    const user = useSelector(selectUser)
     const courses = useSelector(selectActivities)
 
     function addCourse(){
@@ -58,6 +88,7 @@ export default function CoursePage( ){
                 "value": "0"
             }
         ];
+        insertUserActivity(user.uid,item.id,0,0,0,0)
         toAdd = {
             ...toAdd,
             added: true,
@@ -65,6 +96,8 @@ export default function CoursePage( ){
         }
         let all = current
         all = [toAdd,...all]
+
+        console.log(item)
         console.log(all)
         dispatch(setActivities(all))
         setIsAdded(true)

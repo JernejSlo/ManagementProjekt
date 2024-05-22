@@ -19,13 +19,68 @@ import Connections from "../Components/Large/Connections";
 import Goals from '../Components/Large/Goals';
 import goals from '../Components/TempValues/goals';
 import {useNavigation} from "@react-navigation/native";
+import {supabase} from "../supbase";
 
+export const fetchUserActivities = async (userId) => {
+    try {
+        // Fetch user activities for the given user
+        const { data: userActivities, error: activitiesError } = await supabase
+            .from('user_activities')
+            .select('*')
+            .eq('uid', userId);
 
+        if (activitiesError) {
+            throw activitiesError;
+        }
+
+        // Fetch all activities to get their details
+        const { data: activities, error: activitiesDetailsError } = await supabase
+            .from('activities')
+            .select('*');
+
+        if (activitiesDetailsError) {
+            throw activitiesDetailsError;
+        }
+
+        // Create a map of activity details by activity ID
+        const activitiesMap = activities.reduce((map, activity) => {
+            map[activity.id] = {
+                title: activity.title,
+                description: activity.description,
+                img: activity.img,
+                bg: activity.bg,
+            };
+            return map;
+        }, {});
+        // Format the user activities
+        const formattedActivities = userActivities.map(activity => ({
+            activity_id: activity.cid,
+            user_id: activity.uid,
+            title: activitiesMap[activity.cid]?.title || 'Unknown Activity',
+            img: activitiesMap[activity.cid]?.img || '',
+            bg: activitiesMap[activity.cid]?.bg || '',
+            description: activitiesMap[activity.cid]?.description || 'No description available',
+            values: [
+                { title: "Calories b.", value: activity.calories_burned },
+                { title: "Time", value: activity.total_time },
+                { title: "Repetitions", value: activity.repetitions },
+                { title: "Level", value: activity.level },
+            ],
+            created_at: activity.created_at,
+        }));
+
+        console.log('Formatted user activities:', formattedActivities);
+
+        return formattedActivities;
+    } catch (error) {
+        console.error('Error fetching user activities from Supabase:', error);
+        return [];
+    }
+};
 
 const Dashboard = () => {
 
     const user_ = useSelector(selectUser);
-    const activities = useSelector(selectActivities);
     const connections_ = useSelector(selectConnections);
     const past_connections = useSelector(selectPastConnections);
     const trainingPlan_ = useSelector(selectTrainingPlan);
@@ -33,6 +88,17 @@ const Dashboard = () => {
     if (user_?.loggedIn === false){
         navigator.navigate("Login")
     }
+
+    const [activities, setActivities] = useState([]);
+
+    useEffect(() => {
+        const getUserActivities = async () => {
+            const fetchedActivities = await fetchUserActivities(user_.uid);
+            setActivities(fetchedActivities);
+        };
+
+        getUserActivities();
+    }, [user_.uid]);
 
     const [connections, setConnections] = useState(connections_)
     const [trainingPlan, setTrainingPlan] = useState(trainingPlan_)

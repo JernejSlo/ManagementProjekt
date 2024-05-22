@@ -55,9 +55,6 @@ export const fetchAndCategorizeData = async () => {
             }
         });
 
-        console.log('Missions:', missions);
-        console.log('Trails:', trails);
-        console.log('Trainings:', trainings);
 
         return { missions, trails, trainings };
     } catch (error) {
@@ -79,9 +76,6 @@ export default function Browse(){
             setMissions_(sortByPopularity(missions));
             setTrails_(sortByPopularity(trails).slice(0,4));
             setTrainings_(sortByPopularity(trainings));
-            console.log("Here:")
-            console.log(missions_,trainings_,trails_)
-            console.log("\n")
         };
 
         getData();
