@@ -13,6 +13,8 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import CoursePage from "./Pages/CoursePage";
 import CourseInProgress from "./Pages/CourseInProgress";
+import Groups from './Components/Large/Groups';
+import GroupPage from './Components/Large/GroupPage';
 
 export default function App() {
 
@@ -69,7 +71,16 @@ export default function App() {
                   component={Register}
                   options={{ headerShown: false }}
               />
-
+              <Stack.Screen
+                  name="Groups"
+                  component={Groups}
+                  options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                  name="GroupPage"
+                  component={GroupPage}
+                  options={{ headerShown: false }}
+              />
             </Stack.Navigator>
           </SafeAreaProvider>
         </NavigationContainer>
