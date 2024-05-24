@@ -5,7 +5,8 @@ import { selectUser } from '../Slices/navSlice';
 import NavigateAndTitle from '../Components/Small/NavigateAndTitle';
 import { styles } from './Dashboard';
 import Activities from '../Components/Large/Activities';
-import aMonday from '../Components/TempValues/aMonday';
+
+
 
 
 export default function TrainingPlanPage() {
@@ -127,7 +128,7 @@ export default function TrainingPlanPage() {
 
 
 
-
+            <Activities activities={aMonday} />
 
 
 
