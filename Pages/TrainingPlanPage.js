@@ -4,9 +4,15 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../Slices/navSlice';
 import NavigateAndTitle from '../Components/Small/NavigateAndTitle';
 import { styles } from './Dashboard';
+import Activities from '../Components/Large/Activities';
+import aMonday from '../Components/TempValues/aMonday';
+
 
 export default function TrainingPlanPage() {
     let user = useSelector(selectUser);
+
+
+    
 
     return (
         <SafeAreaView style={{ ...styles.base_bg, alignItems: 'center' }}>
@@ -118,6 +124,7 @@ export default function TrainingPlanPage() {
 
 
             </View>
+
 
 
 
