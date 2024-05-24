@@ -93,7 +93,7 @@ export default function DashboardUser({id, user, activities}){
     let [sideButtons] = useState([
         {iconName: "search", navigateTo: "Browse", from: "mui"},
         {iconName: "trophy", navigateTo: "Leaderboard", from: "io"},
-        {iconName: "people", navigateTo: "Groups", from: "mui"},
+        {iconName: "people", navigateTo: "Teams", from: "mui"},
         {iconName: "bar-chart", navigateTo: "Statistics", from: "mui"},
     ])
 

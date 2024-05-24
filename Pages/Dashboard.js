@@ -5,7 +5,7 @@ import SwitchView from "../Components/Small/SwitchView"
 import Activities from "../Components/Large/Activities";
 import {SafeAreaView} from "react-native-safe-area-context";
 import {useFonts} from "@expo-google-fonts/magra";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {
     selectUser,
     selectActivities,
@@ -82,23 +82,25 @@ const Dashboard = () => {
 
     const user_ = useSelector(selectUser);
     const connections_ = useSelector(selectConnections);
+    const courses = useSelector(selectActivities)
     const past_connections = useSelector(selectPastConnections);
     const trainingPlan_ = useSelector(selectTrainingPlan);
     const navigator = useNavigation()
+    const dispatch = useDispatch()
     if (user_?.loggedIn === false){
         navigator.navigate("Login")
     }
 
-    const [activities, setActivities] = useState([]);
+    const [activities, setActivities_] = useState([]);
 
     useEffect(() => {
         const getUserActivities = async () => {
             const fetchedActivities = await fetchUserActivities(user_.uid);
-            setActivities(fetchedActivities);
+            setActivities_(fetchedActivities);
         };
 
         getUserActivities();
-    }, [user_.uid]);
+    }, [user_.uid,courses]);
 
     const [connections, setConnections] = useState(connections_)
     const [trainingPlan, setTrainingPlan] = useState(trainingPlan_)

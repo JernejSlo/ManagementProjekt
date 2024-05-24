@@ -53,7 +53,7 @@ export default function TrainingPlanPage() {
                     marginLeft: 20,
                 
                 }}>MONDAY</Text>
-
+                <Activities activities={aMonday}/>
 
 
 

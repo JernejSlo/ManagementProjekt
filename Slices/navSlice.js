@@ -23,7 +23,7 @@ const initialState = {
         startWeight: 70,
         weight: 67,
         goal: 10,
-        loggedIn: false
+        loggedIn: true
     },
     selectedActivity:{},
     otherUser:{},
