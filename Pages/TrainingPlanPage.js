@@ -5,6 +5,7 @@ import { selectUser } from '../Slices/navSlice';
 import NavigateAndTitle from '../Components/Small/NavigateAndTitle';
 import { styles } from './Dashboard';
 import Activities from '../Components/Large/Activities';
+import {days} from "../Components/TempValues/days";
 
 
 
@@ -13,7 +14,15 @@ export default function TrainingPlanPage() {
     let user = useSelector(selectUser);
 
 
-    
+    const dayNames = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    ];
 
     return (
         <SafeAreaView style={{ ...styles.base_bg, alignItems: 'center' }}>
@@ -45,99 +54,47 @@ export default function TrainingPlanPage() {
                 
                 }}>FRIDAY</Text>
 
+                {
+                    dayNames.map(((day, index) => {
+                        let values = days.filter(item => item.day === day)
+                        if (values.length === 0){
+                            return
+                        }
+                        return (
+                            <View>
 
-                <Text style = {{
-                    fontSize: 15,
-                    fontFamily: 'Quicksand700Bold',
-                    color: '#3E4242',
-                    marginTop: 20,
-                    marginLeft: 20,
-                
-                }}>MONDAY</Text>
-                <Activities activities={aMonday}/>
+                                <Text style = {{
+                                    fontSize: 15,
+                                    fontFamily: 'Quicksand700Bold',
+                                    color: '#3E4242',
+                                    marginTop: 20,
+                                    marginLeft: 20,
 
-
-
-
-                <View style={{
-                    width: '90%',
-                    height: 1,
-                    backgroundColor: '#D6D6D6',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center', // This will horizontally center the view
-                    marginLeft: 20,
-                }}></View>
+                                }}>{day.toUpperCase()}</Text>
 
 
-
-                <Text style = {{
-                    fontSize: 15,
-                    fontFamily: 'Quicksand700Bold',
-                    color: '#3E4242',
-                    marginTop: 20,
-                    marginLeft: 20,
-                
-                }}>WEDNESDAY</Text>
+                                <Activities activities={values}/>
 
 
-                <View style={{
-                    width: '90%',
-                    height: 1,
-                    backgroundColor: '#D6D6D6',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center', // This will horizontally center the view
-                    marginLeft: 20,
-                }}></View>
+                                <View style={{
+                                    width: '90%',
+                                    height: 1,
+                                    backgroundColor: '#D6D6D6',
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    justifyContent: 'center', // This will horizontally center the view
+                                    marginLeft: 20,
+                                }}></View>
 
 
-                <Text style = {{
-                    fontSize: 15,
-                    fontFamily: 'Quicksand700Bold',
-                    color: '#3E4242',
-                    marginTop: 20,
-                    marginLeft: 20,
-                
-                }}>SATURDAY</Text>
-
-
-                <View style={{
-                    width: '90%',
-                    height: 1,
-                    backgroundColor: '#D6D6D6',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center', // This will horizontally center the view
-                    marginLeft: 20,
-                }}></View>
-
-
-                <Text style = {{
-                    fontSize: 15,
-                    fontFamily: 'Quicksand700Bold',
-                    color: '#3E4242',
-                    marginTop: 20,
-                    marginLeft: 20,
-                
-                }}>SUNDAY</Text>
+                            </View>
+                        )
+                    }))
+                }
 
 
 
             </View>
-
-
-
-            <Activities activities={aMonday} />
-
-
-
-
-
-
-
-
-
 
 
 
