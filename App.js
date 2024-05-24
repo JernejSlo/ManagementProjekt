@@ -17,6 +17,7 @@ import Groups from './Components/Large/Groups';
 import GroupPage from './Components/Large/GroupPage';
 import Teams from "./Pages/Teams";
 import LeaderboardPage from "./Pages/LeaderboardPage";
+import OtherUserDashboard from "./Pages/OtherUserDashboard";
 
 export default function App() {
 
@@ -44,6 +45,13 @@ export default function App() {
                     headerShown: false,
                   }}
               />
+                <Stack.Screen
+                    name="OtherUserDashboard"
+                    component={OtherUserDashboard}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
               <Stack.Screen
                   name="Browse"
                   component={Browse}
