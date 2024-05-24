@@ -6,6 +6,7 @@ import ValuesInLine from "../Small/ValuesInLine"
 import {useDispatch} from "react-redux";
 import {useNavigation} from "@react-navigation/native";
 import {setOtherUser} from "../../Slices/navSlice";
+import {loadedImages} from "../TempValues/Images";
 
 const Leaderboard = ({ leaderboard }) => {
 
@@ -99,7 +100,7 @@ const Leaderboard = ({ leaderboard }) => {
                                     padding: 3,
                                     marginRight: 8,
                                     resizeMode: "contain"
-                                }} source={item.img}/>
+                                }} source={loadedImages[item.img]}/>
                             </ImageBackground>
 
                             <View style={{

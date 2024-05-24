@@ -19,7 +19,7 @@ const community_ = [
         name: "Jaka Lee",
         location: "Ljubljana, Slovenija",
         rank: 1,
-        img: require('../assets/AsianGuy.png'),
+        img: 'AsianGuy.png',
         activities: [
             {
                 id: 1,
@@ -103,7 +103,7 @@ const community_ = [
         name: "Aleš Lunder",
         location: "Koper, Slovenija",
         rank: 2,
-        img: require('../assets/AlesGuy.png'),
+        img: 'AlesGuy.png',
         activities: [
             {
                 id: 1,
@@ -187,7 +187,7 @@ const community_ = [
         name: "Nika Franko",
         location: "Ljubljana, Slovenija",
         rank: 3,
-        img: require('../assets/RedHairGirl.png'),
+        img: 'RedHairGirl.png',
         activities: [
             {
                 id: 1,
