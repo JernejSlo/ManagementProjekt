@@ -19,7 +19,119 @@ export default function TrainingPlanPage() {
                     backgroundColor: '#F9EBDC',
                     borderRadius: 20,
                 }}
-            ></View>
+            >
+
+                <Text style = {{
+                    fontSize: 15,
+                    fontFamily: 'Quicksand700Bold',
+                    color: '#6b6b6b',
+                    marginTop: 20,
+                    marginLeft: 20,
+                
+                }}>TODAY</Text>
+
+                <Text style = {{
+                    fontSize: 20,
+                    fontFamily: 'Quicksand700Bold',
+                    color: '#3E4242',
+                    marginLeft: 20,
+                
+                }}>FRIDAY</Text>
+
+
+                <Text style = {{
+                    fontSize: 15,
+                    fontFamily: 'Quicksand700Bold',
+                    color: '#3E4242',
+                    marginTop: 20,
+                    marginLeft: 20,
+                
+                }}>MONDAY</Text>
+
+
+
+
+
+                <View style={{
+                    width: '90%',
+                    height: 1,
+                    backgroundColor: '#D6D6D6',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center', // This will horizontally center the view
+                    marginLeft: 20,
+                }}></View>
+
+
+
+                <Text style = {{
+                    fontSize: 15,
+                    fontFamily: 'Quicksand700Bold',
+                    color: '#3E4242',
+                    marginTop: 20,
+                    marginLeft: 20,
+                
+                }}>WEDNESDAY</Text>
+
+
+                <View style={{
+                    width: '90%',
+                    height: 1,
+                    backgroundColor: '#D6D6D6',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center', // This will horizontally center the view
+                    marginLeft: 20,
+                }}></View>
+
+
+                <Text style = {{
+                    fontSize: 15,
+                    fontFamily: 'Quicksand700Bold',
+                    color: '#3E4242',
+                    marginTop: 20,
+                    marginLeft: 20,
+                
+                }}>SATURDAY</Text>
+
+
+                <View style={{
+                    width: '90%',
+                    height: 1,
+                    backgroundColor: '#D6D6D6',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center', // This will horizontally center the view
+                    marginLeft: 20,
+                }}></View>
+
+
+                <Text style = {{
+                    fontSize: 15,
+                    fontFamily: 'Quicksand700Bold',
+                    color: '#3E4242',
+                    marginTop: 20,
+                    marginLeft: 20,
+                
+                }}>SUNDAY</Text>
+
+
+
+            </View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '90%', marginTop: 20 }}>
                 <TouchableOpacity
