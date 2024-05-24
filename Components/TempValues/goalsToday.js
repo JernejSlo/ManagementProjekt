@@ -1,27 +1,27 @@
-const goals = [
+const goalsToday = [
     {
         id: 1,
-        title: "Great job!",
-        description: "So far you have burned 1290 calories this week! You have missed 1 workour, of which you have 210 calories to make up to keep on track to your goal.",
+        title: "Summer Beach Run Course",
+        description: "Enjoy this scenic hour long beach running course made specially for you!",
         img: require('../../assets/trails/summerbr.png'),
         bg: require('../../assets/missions/BGSaveThePresident.png'),
         time: 1,
         values: [
             {
-                "title": "",
-                "value": ""
+                "title": "Calories burned",
+                "value": "720"
             },
             {
-                "title": "",
-                "value": ""
+                "title": "Time",
+                "value": "1h"
             },
             {
-                "title": "",
-                "value": ""
+                "title": "Repetitions",
+                "value": "1"
             },
             {
-                "title": "",
-                "value": ""
+                "title": "% to goal",
+                "value": "28%"
             }
         ]
     },
@@ -81,4 +81,4 @@ const goals = [
     */
 
 ]
-export default goals;
+export default goalsToday;

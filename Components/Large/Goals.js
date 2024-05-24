@@ -2,6 +2,7 @@ import {useNavigation} from "@react-navigation/native";
 import {useDispatch} from "react-redux";
 import {View, Text, StyleSheet, FlatList, Image, TouchableOpacity, ScrollView} from 'react-native';
 import ValuesInLine from "../Small/ValuesInLine";
+import goalsToday from "../TempValues/goalsToday";
 
 export default function Goals({goals }){
 
@@ -60,7 +61,7 @@ export default function Goals({goals }){
                         borderRadius: 12,
                     }} source={item.img}/>
                     <View style={{
-                        width: "45%",
+                        width: "70%",
                     }}>
                         <Text style={{
                             fontFamily: "Quicksand700Bold",
@@ -82,16 +83,6 @@ export default function Goals({goals }){
                         paddingLeft: 5,
                         alignItems: "center"
                     }}>
-                        <ValuesInLine vals={item.values.slice(0,2)} texts={styles}
-                                      paddinga={2}
-                                      paddingl={0}
-                                      paddingr={0}
-                                      margint={1}/>
-                        <ValuesInLine vals={item.values.slice(2,4)} texts={styles}
-                                      paddinga={1}
-                                      paddingl={0}
-                                      paddingr={0}
-                                      margint={1}/>
                     </View>
                 </TouchableOpacity>
             ))
@@ -110,7 +101,7 @@ export default function Goals({goals }){
                 Today
             </Text>
 
-{goals.map((item, index) => (
+{goalsToday.map((item, index) => (
                 <TouchableOpacity key={Math.random() * 100000} style={{
                     flexDirection: "row",
                     backgroundColor: "#d1d1d1",
