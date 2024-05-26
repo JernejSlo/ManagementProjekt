@@ -20,6 +20,7 @@ export const courseImages = {
     // Trainings
     "trainings/I1.png": require("../../assets/trainings/I1.png"),
     "trainings/I2.png": require("../../assets/trainings/I2.png"),
+    "assets/Sportsicon(1).png": require("../../assets/Sportsicon(1).png"),
 };
 
 
