@@ -9,16 +9,16 @@ export const days = [
         time: 1,
         values: [
             {
-                title: "Calories b.",
+                title: "Cal brn",
                 value: "720"
             },
             {
-                title: "Time",
+                title: "wo. time",
                 value: "1h"
             },
             {
-                title: "Repetitions",
-                value: "1"
+                title: "Team",
+                value: "None"
             },
             {
                 title: "% to goal",
@@ -30,17 +30,17 @@ export const days = [
         id: 2,
         day: "Wednesday",
         title: "Uphill forest hike Course",
-        description: "Take it a bit easier, challenge yourself, but don't take the workour to your maximum pace.",
+        description: "Take it a bit easier, challenge yourself, but don't take the workout to your maximum pace.",
         img: "trails/uphillForestHike.png",
         bg: "missions/BGSaveThePresident.png",
         time: 1,
         values: [
             {
-                title: "Calories b.",
+                title: "Cal brn",
                 value: "780"
             },
             {
-                title: "Time",
+                title: "wo. time",
                 value: "1.5h"
             },
             {
@@ -63,11 +63,11 @@ export const days = [
         time: 1,
         values: [
             {
-                title: "Calories b.",
+                title: "Cal brn",
                 value: "360"
             },
             {
-                title: "Time",
+                title: "wo. time",
                 value: "0.5h"
             },
             {
@@ -90,16 +90,16 @@ export const days = [
         time: 1,
         values: [
             {
-                title: "Calories b.",
+                title: "Cal brn",
                 value: "720"
             },
             {
-                title: "Time",
+                title: "wo. time",
                 value: "1h"
             },
             {
-                title: "Repetitions",
-                value: "1"
+                title: "Team",
+                value: "None"
             },
             {
                 title: "% to goal",

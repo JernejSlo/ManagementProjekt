@@ -98,10 +98,13 @@ const Dashboard = () => {
             const fetchedActivities = await fetchUserActivities(user_.uid);
             setActivities_(fetchedActivities);
         };
+        getUserActivities()
 
-        getUserActivities();
-    }, [user_.uid,courses]);
+    }, [user_.uid]);
 
+    useEffect(() => {
+        dispatch(setActivities(activities))
+    },[activities])
     const [connections, setConnections] = useState(connections_)
     const [trainingPlan, setTrainingPlan] = useState(trainingPlan_)
 

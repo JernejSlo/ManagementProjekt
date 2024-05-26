@@ -113,14 +113,13 @@ const initialState = {
             id: "00001",
             title: "BH FITNESS RS800",
             connection: "Press to connect",
-            img: 'treadmillog.png',
+            img: require('../assets/treadmillog.png'),
         },
         {
             id: "00002",
             title: "Samsung TV",
             connection: "Press to connect",
-            img: 'tvS.png',
-        },
+            img: require('../assets/tvS.png',)},
 
     ],
     past_connections: [
@@ -128,24 +127,24 @@ const initialState = {
             id: "00001",
             title: "BH FITNESS RS900",
             connection: "Connected",
-            img: 'treadmillog.png',
+            img: require('../assets/treadmillog.png'),
         },
         {
             id: "00002",
             title: "Apple TV",
             connection: "Connected",
-            img: 'tv.png',
+            img: require('../assets/tv.png'),
         },
         {
             id: "00003",
             title: "BH FITNESS RS800",
             connection: "Disconnected",
-            img: '8.png',
+            img: require('../assets/8.png'),
         },{
             id: "00004",
             title: "Apple Watch",
             connection: "Disconnected",
-            img: '7.png',
+            img: require('../assets/7.png'),
         },
     ],
     leaderboard: [

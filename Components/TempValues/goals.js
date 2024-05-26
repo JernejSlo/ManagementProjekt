@@ -2,7 +2,7 @@ const goals = [
     {
         id: 1,
         title: "Great job!",
-        description: "So far you have burned 1290 calories this week! You have missed 1 workour, of which you have 210 calories to make up to keep on track to your goal.",
+        description: "So far you have burned 1290 calories this week! You have missed 1 workout, of which you have 210 calories to make up to keep on track to your goal.",
         img: require('../../assets/trails/summerbr.png'),
         bg: require('../../assets/missions/BGSaveThePresident.png'),
         time: 1,

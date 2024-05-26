@@ -57,9 +57,9 @@ export default function Goals({goals }){
                         "width": 66,
                         padding: 3,
                         marginRight: 8,
-                        backgroundColor: "white",
+                        backgroundColor: "transparent",
                         borderRadius: 12,
-                    }} source={item.img}/>
+                    }} source={require("../../assets/Other/Type 2.png")}/>
                     <View style={{
                         width: "70%",
                     }}>

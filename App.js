@@ -18,6 +18,7 @@ import GroupPage from './Components/Large/GroupPage';
 import Teams from "./Pages/Teams";
 import LeaderboardPage from "./Pages/LeaderboardPage";
 import OtherUserDashboard from "./Pages/OtherUserDashboard";
+import ConnectedDevices from "./Pages/ConnectedDevices";
 
 export default function App() {
 
@@ -45,6 +46,13 @@ export default function App() {
                     headerShown: false,
                   }}
               />
+                <Stack.Screen
+                    name="Connections"
+                    component={ConnectedDevices}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
                 <Stack.Screen
                     name="OtherUserDashboard"
                     component={OtherUserDashboard}

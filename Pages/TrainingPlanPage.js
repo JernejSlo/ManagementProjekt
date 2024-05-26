@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, Text, View, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../Slices/navSlice';
 import NavigateAndTitle from '../Components/Small/NavigateAndTitle';
@@ -28,15 +28,13 @@ export default function TrainingPlanPage() {
         <SafeAreaView style={{ ...styles.base_bg, alignItems: 'center' }}>
             <NavigateAndTitle title={`${user.name}'s Training Plan`} />
 
-            <View
+            <ScrollView
                 style={{
                     width: '90%',
-                    height: '70%',
-                    backgroundColor: '#F9EBDC',
+                    backgroundColor: 'rgba(255,255,255,0.4)',
                     borderRadius: 20,
                 }}
             >
-
                 <Text style = {{
                     fontSize: 15,
                     fontFamily: 'Quicksand700Bold',
@@ -51,8 +49,9 @@ export default function TrainingPlanPage() {
                     fontFamily: 'Quicksand700Bold',
                     color: '#3E4242',
                     marginLeft: 20,
+
                 
-                }}>FRIDAY</Text>
+                }}>MONDAY</Text>
 
                 {
                     dayNames.map(((day, index) => {
@@ -61,7 +60,9 @@ export default function TrainingPlanPage() {
                             return
                         }
                         return (
-                            <View>
+                            <View key={index} style={{
+                                width: "107%",
+                            }}>
 
                                 <Text style = {{
                                     fontSize: 15,
@@ -72,12 +73,16 @@ export default function TrainingPlanPage() {
 
                                 }}>{day.toUpperCase()}</Text>
 
-
-                                <Activities activities={values}/>
+                                <View style={{
+                                    marginLeft: "-6.5%",
+                                    marginTop: 10,
+                                }}>
+                                    <Activities activities={values}/>
+                                </View>
 
 
                                 <View style={{
-                                    width: '90%',
+                                    width: '82%',
                                     height: 1,
                                     backgroundColor: '#D6D6D6',
                                     display: 'flex',
@@ -94,7 +99,7 @@ export default function TrainingPlanPage() {
 
 
 
-            </View>
+            </ScrollView>
 
 
 
@@ -109,7 +114,7 @@ export default function TrainingPlanPage() {
                         alignItems: 'center',
                     }}
                 >
-                    <Text style={{ color: 'white', fontSize: 20, fontFamily: 'Quicksand700Bold' }}>CUSTOMIZE</Text>
+                    <Text style={{ color: 'white', textAlign: "center", fontSize: 20, fontFamily: 'Quicksand700Bold' }}>CUSTOMIZE</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -124,8 +129,8 @@ export default function TrainingPlanPage() {
                         textAlign: 'center', // Center text horizontally
                     }}
                 >
-                    <Text style={{ color: 'white', fontSize: 20, fontFamily: 'Quicksand700Bold' }}>
-                        GENERATE  NEW PLAN
+                    <Text style={{ color: 'white', textAlign: "center", fontSize: 20, fontFamily: 'Quicksand700Bold' }}>
+                        GENERATE PLAN
                     </Text>
                 </TouchableOpacity>
             </View>

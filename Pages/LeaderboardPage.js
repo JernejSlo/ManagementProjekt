@@ -345,7 +345,7 @@ export default function LeaderboardPage(){
             backgroundColor: "#FFF7E1",
             height: "100%"
         }}>
-            <NavigateAndTitle title={"Teams"}/>
+            <NavigateAndTitle title={"Leaderboard"}/>
             <View style={{
                 alignSelf: "center",
                 width: "100%",

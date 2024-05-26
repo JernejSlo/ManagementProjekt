@@ -70,9 +70,19 @@ export default function Browse(){
     const [missions_,setMissions_] = useState([])
     const [trainings_,setTrainings_] = useState([])
 
+    const [trails_og,setTrails_og] = useState([])
+    const [missions_og,setMissions_og] = useState([])
+    const [trainings_og,setTrainings_og] = useState([])
+
+
     useEffect(() => {
         const getData = async () => {
             const { missions, trails, trainings } = await fetchAndCategorizeData();
+
+            setMissions_og(sortByPopularity(missions));
+            setTrails_og(sortByPopularity(trails).slice(0,4));
+            setTrainings_og(sortByPopularity(trainings));
+
             setMissions_(sortByPopularity(missions));
             setTrails_(sortByPopularity(trails).slice(0,4));
             setTrainings_(sortByPopularity(trainings));
@@ -113,18 +123,18 @@ export default function Browse(){
 
     function filterAll(text){
         if (text.toLowerCase() == "all" || text == "*"){
-            setTrails_(sortByPopularity(searchItems("",trails)))
-            setMissions_(sortByPopularity(searchItems("",missions)))
-            setTrainings_(sortByPopularity(searchItems("",trainings)))
+            setTrails_(sortByPopularity(searchItems("",trails_og)))
+            setMissions_(sortByPopularity(searchItems("",missions_og)))
+            setTrainings_(sortByPopularity(searchItems("",trainings_og)))
         }else if (text != "") {
-            setTrails_(sortByPopularity(searchItems(text, trails)))
-            setMissions_(sortByPopularity(searchItems(text, missions)))
-            setTrainings_(sortByPopularity(searchItems(text, trainings)))
+            setTrails_(sortByPopularity(searchItems(text, trails_og)))
+            setMissions_(sortByPopularity(searchItems(text, missions_og)))
+            setTrainings_(sortByPopularity(searchItems(text, trainings_og)))
         }
         else{
-            setTrails_(sortByPopularity(searchItems(text,trails)).slice(0,4))
-            setMissions_(sortByPopularity(searchItems(text,missions)).slice(0,2))
-            setTrainings_(sortByPopularity(searchItems(text,trainings)).slice(0,2))
+            setTrails_(sortByPopularity(searchItems(text,trails_og)).slice(0,4))
+            setMissions_(sortByPopularity(searchItems(text,missions_og)).slice(0,2))
+            setTrainings_(sortByPopularity(searchItems(text,trainings_og)).slice(0,2))
         }
 
 

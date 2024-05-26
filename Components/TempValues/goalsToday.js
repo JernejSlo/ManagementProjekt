@@ -8,20 +8,20 @@ const goalsToday = [
         time: 1,
         values: [
             {
-                "title": "Calories burned",
-                "value": "720"
+                title: "Cal brn",
+                value: "720"
             },
             {
-                "title": "Time",
-                "value": "1h"
+                title: "wo. time",
+                value: "1h"
             },
             {
-                "title": "Repetitions",
-                "value": "1"
+                title: "Team",
+                value: "None"
             },
             {
-                "title": "% to goal",
-                "value": "28%"
+                title: "% to goal",
+                value: "28%"
             }
         ]
     },
